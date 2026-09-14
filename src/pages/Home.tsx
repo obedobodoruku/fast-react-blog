@@ -80,12 +80,11 @@ const Home = () => {
         return <h2 className='text-2xl font-bold'>Loading...</h2>
     }
 
-    if (error) {
-        return <h2 className='text-2xl font-bold'>Error: {error}</h2>
-    }
+    
 
     return (
         <div>
+            {error && <h2 className='text-2xl font-bold'>Error: {error}</h2>}
             <div>
                 <ul>
                     {data.map((post) => (
