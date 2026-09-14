@@ -37,12 +37,6 @@ const Navbar = () => {
         };
         fetchCurrentUser();
     }, [token, apiUrl])
-
-    const logoutUser = () => {
-        localStorage.removeItem("access_token");
-        setCurrentUser(null);
-        navigate("/");
-    }
     
 
     return (
@@ -61,9 +55,8 @@ const Navbar = () => {
                     </li>: <li>
                         <Link  className='hover:underline' to={"/register"}>Register</Link>
                     </li>}
-                    {currentUser ? <li>
-                        <button type='button' className='hover:underline' onClick={logoutUser}>Logout</button>
-                    </li>: <li>
+                    {currentUser ? "" :
+                    <li>
                         <Link  className='hover:underline' to={"/login"}>Login</Link>
                     </li> }
                     

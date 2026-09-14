@@ -66,7 +66,11 @@ const Account = () => {
         
     }, [token, apiUrl]);
 
-
+    const logoutUser = () => {
+        localStorage.removeItem("access_token");
+        setCurrentUser(null);
+        navigate("/");
+    }
 
     if (isLoading) {
         return <h1 className="text-2xl font-medium">Loading...</h1>
@@ -95,7 +99,7 @@ const Account = () => {
                     )) : ""}
                 </ul>
             </div>
-            <div className={"flex flex-row justify-center items-center font-bold my-4"}>
+            <div className={"flex flex-row justify-center items-center font-bold my-4 gap-4"}>
                 <Link to={"/account/update"}>
                     <button
                     className='p-2 w-[150px] text-[0.85rem]  rounded-md bg-gradient-to-r from-indigo-500 to-indigo-700 text-white
@@ -106,6 +110,16 @@ const Account = () => {
                         Update Account
                     </button>
                 </Link>
+                <div>
+                    <button 
+                    type='button' 
+                    className='p-2 w-[150px] text-[0.85rem]  rounded-md bg-gradient-to-r from-indigo-500 to-indigo-700 text-white
+                    hover:from-indigo-600
+                    ' 
+                    onClick={logoutUser}>Logout</button>
+                </div>
+                
+                    
             </div>
         </div>
     );
