@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {Link, useNavigate} from "react-router-dom";
 
 interface PageUser {
@@ -62,7 +62,7 @@ const Navbar = () => {
                         <Link  className='hover:underline' to={"/register"}>Register</Link>
                     </li>}
                     {currentUser ? <li>
-                        <Link className='hover:underline' onClick={logoutUser}>Logout</Link>
+                        <button type='button' className='hover:underline' onClick={logoutUser}>Logout</button>
                     </li>: <li>
                         <Link  className='hover:underline' to={"/login"}>Login</Link>
                     </li> }
