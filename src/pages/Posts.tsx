@@ -11,7 +11,7 @@ const Posts = () => {
     const token = localStorage.getItem('access_token');
     const navigate = useNavigate();
 
-    const apiUrl = import.meta.env.VITE_API_URL;
+    const apiUrl = import.meta.env.API_URL;
 
     const createPost = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();

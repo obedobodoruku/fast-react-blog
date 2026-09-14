@@ -22,7 +22,7 @@ const Home = () => {
     const [loggedIn, setLoggedIn] = useState();
     const [hasMore, setHasMore] = useState<boolean>(true);
 
-    const apiUrl = import.meta.env.VITE_API_URL;
+    const apiUrl = import.meta.env.API_URL;
 
     useEffect(() => {
         const fetchPosts = async (): Promise<void> => {

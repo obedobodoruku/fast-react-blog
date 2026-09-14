@@ -22,7 +22,7 @@ const AccountPosts = () => {
 
     const token = localStorage.getItem('access_token');
 
-    const apiUrl = import.meta.env.VITE_API_URL;
+    const apiUrl = import.meta.env.API_URL;
 
     useEffect(() => {
         const fetchPosts = async (): Promise<void> => {
