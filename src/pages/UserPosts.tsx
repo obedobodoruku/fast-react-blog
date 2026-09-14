@@ -20,7 +20,7 @@ const UserPosts = () => {
     const [hasMore, setHasMore] = useState(true);
 
     const { id } = useParams();
-    const apiUrl = import.meta.env.API_URL;
+    const apiUrl = import.meta.env.VITE_API_URL;
 
     useEffect(() => {
         const fetchUserPosts = async (): Promise<void> => {
